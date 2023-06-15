@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(36, 36, 36);
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20vh;
+  padding: clamp(1rem, 5vw, 6rem);
+}
+
+nav > a {
+  color: rgba(255, 255, 255, .25);
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(3rem, 8vw, 10rem);
+  font-weight: 300;
+  text-decoration: none;
+  position: relative;
+  will-change: transform;
+}
+
+nav > a:hover {
+  color: white;
+}
+
+nav > a:hover span {
+  border-top-color: white;
+  border-bottom-color: white;
+}
+
+nav > a > span {
+  display: block;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  z-index: 2;
+}
+
+nav > a > img {
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%,-50%) scale(0.5);
+  transition: transform 250ms, opacity 250ms;
+  pointer-events: none;
+  width: min(300vw, 500px);
+  will-change: transform;
+}
+
+nav > a:hover img {
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+}
